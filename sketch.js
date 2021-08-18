@@ -2,6 +2,7 @@
 
 var img1
 var cases=0;
+var gameState='moving'
 function preload(){
   image1 = loadImage("image_part_001.jpg");
   image2 = loadImage("image_part_002.jpg");
@@ -69,33 +70,33 @@ function draw() {
   checkMap()
 
    
-  if(mousePressedOver(img1)){
+  if(mousePressedOver(img1)&& cases==null){
     cases=1
   }
-  if(mousePressedOver(img2)){
+  if(mousePressedOver(img2)&& cases==null){
     cases=2
   }
-  if(mousePressedOver(img3)){
+  if(mousePressedOver(img3)&& cases==null){
     cases=3
   }
   
-  if(mousePressedOver(img4)){
+  if(mousePressedOver(img4)&& cases==null){
     cases=4
   }
-  if(mousePressedOver(img5)){
+  if(mousePressedOver(img5)&& cases==null){
     cases=5
   }
-  if(mousePressedOver(img6)){
+  if(mousePressedOver(img6)&& cases==null){
     cases=6
   }
 
-  if(mousePressedOver(img7)){
+  if(mousePressedOver(img7) && cases==null){
     cases=7
   }
-  if(mousePressedOver(img8)){
+  if(mousePressedOver(img8)&& cases==null){
     cases=8
   }
-  if(mousePressedOver(img9)){
+  if(mousePressedOver(img9)&& cases==null){
     cases=9
   }
   
@@ -186,8 +187,9 @@ function mouseDragged(){
   
 }
 function mouseReleased(){
-  console.log(mouseX,mouseY)
-  console.log(img1.x,img1.y)
+  //console.log(mouseX,mouseY)
+  //console.log(img1.x,img1.y)
+  cases=null;
 }
 function mouseOut(){
 
@@ -205,9 +207,10 @@ if(img1.x>400 && img1.x<600 && img1.y>150 && img1.y<350
  && img9.x>800 && img9.x<1000 && img9.y>550 && img9.y<750
  ){
 alert('You Win')
-textSize(30)
+textSize(40)
 fill(255)
-text('WELL DONE',800,600)
+text('WELL DONE',600,300)
+text('Refresh the page to play again',400,400)
  }
 }
 
